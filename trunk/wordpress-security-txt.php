@@ -8,7 +8,7 @@
  * @package           WordPress_Security_Txt
  *
  * @wordpress-plugin
- * Plugin Name:       security.txt
+ * Plugin Name:       wordpress-security-txt
  * Plugin URI:        https://github.com/austinheap/wordpress-security-txt
  * Description:       A plugin for serving 'security.txt' in WordPress 4.9+, based on configuration settings.
  * Version:           1.0.0
