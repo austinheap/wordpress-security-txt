@@ -20,32 +20,31 @@
  * @subpackage WordPress_Security_Txt/includes
  * @author     Austin Heap <me@austinheap.com>
  */
-class WordPress_Security_Txt_Activator {
+class WordPress_Security_Txt_Activator
+{
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function activate() {
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wordpress-security-txt-admin.php';
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function activate()
+    {
+        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wordpress-security-txt-admin.php';
 
-		flush_rewrite_rules();
+        flush_rewrite_rules();
 
-		$opts    = [];
-		$options = WordPress_Security_Txt_Admin::get_options_list();
+        $opts    = [];
+        $options = WordPress_Security_Txt_Admin::get_options_list();
 
-		foreach ( $options as $option ) {
+        foreach ($options as $option) {
+            $opts[ $option[0] ] = $option[2];
+        }
 
-			$opts[ $option[0] ] = $option[2];
+        update_option('wordpress-security-txt-options', $opts);
 
-		}
-
-		update_option( 'wordpress-security-txt-options', $opts );
-
-		WordPress_Security_Txt::event( __FUNCTION__ );
-	}
-
+        WordPress_Security_Txt::event(__FUNCTION__);
+    }
 }
