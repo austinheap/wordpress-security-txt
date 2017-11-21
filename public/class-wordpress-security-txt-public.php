@@ -77,7 +77,6 @@ class WordPress_Security_Txt_Public
     /**
      * Hijacks requests for enabled routes
      *
-     * @since    1.0.0
      * @return   void
      */
     public function route()
@@ -99,8 +98,16 @@ class WordPress_Security_Txt_Public
             return;
         }
 
-        $uri = substr($request, strlen($site));
+        $this->apply_routes(substr($request, strlen($site)));
+    }
 
+    /**
+     * Applies plugin routes to a given URI.
+     *
+     * @param string $uri
+     */
+    private function apply_routes($uri)
+    {
         $routes = [
             '/security.txt'             => ['method' => 'redirect', 'document' => 'security.txt'],
             '/.well-known/security.txt' => ['method' => 'show', 'document' => 'security.txt'],
@@ -241,7 +248,55 @@ class WordPress_Security_Txt_Public
      */
     private function render_security_txt()
     {
-        $output = null;
+        $output = $this->get_security_txt_cache();
+
+        if (empty($output)) {
+            WordPress_Security_Txt::import_lib();
+
+            $writer = (new \AustinHeap\Security\Txt\Writer)->setDebug(isset($this->options['credits']) ? $this->options['credits'] : false)
+                                                           ->addContact($this->options['contact']);
+
+            if (! empty($this->options['encryption'])) {
+                $writer->setEncryption(get_site_url() . '/.well-known/gpg.txt');
+            }
+
+            if (! empty($this->options['disclosure']) && $this->options['disclosure'] != 'default') {
+                $writer->setDisclosure($this->options['disclosure']);
+            }
+
+            if (! empty($this->options['acknowledgement'])) {
+                $writer->setAcknowledgement($this->options['acknowledgement']);
+            }
+
+            $output = $writer->generate()->getText();
+        }
+
+        $this->write_security_txt_cache($output);
+
+        return $output;
+    }
+
+    /**
+     * Write to the security.txt cache.
+     *
+     * @param string $data
+     * @return void
+     */
+    private function write_security_txt_cache($data) {
+        if (isset($this->options['cache']) && $this->options['cache']) {
+            file_put_contents(self::cache_file(), $data);
+            WordPress_Security_Txt::event('cache');
+        }
+    }
+
+    /**
+     * Get the security.txt cache.
+     *
+     * @return mixed
+     */
+    private function get_security_txt_cache()
+    {
+        $data = null;
 
         if (isset($this->options['cache']) && $this->options['cache']) {
             $cache_file = self::cache_file();
@@ -250,38 +305,11 @@ class WordPress_Security_Txt_Public
                 if (filemtime($cache_file) < time() - 86400) {
                     self::cache_clear();
                 } else {
-                    $output = file_get_contents($cache_file);
+                    $data = file_get_contents($cache_file);
                 }
             }
         }
 
-        if (empty($output)) {
-            WordPress_Security_Txt::import_lib();
-
-            $writer = (new \AustinHeap\Security\Txt\Writer)->setDebug(isset($this->options['credits']) ? $this->options['credits'] : false)
-                                                           ->addContact($this->options['contact']);
-
-            if (isset($this->options['encryption']) && ! empty($this->options['encryption'])) {
-                $writer->setEncryption(get_site_url() . '/.well-known/gpg.txt');
-            }
-
-            if (isset($this->options['disclosure']) && ! empty($this->options['disclosure']) && $this->options['disclosure'] != 'default') {
-                $writer->setDisclosure($this->options['disclosure']);
-            }
-
-            if (isset($this->options['acknowledgement']) && ! empty($this->options['acknowledgement'])) {
-                $writer->setAcknowledgement($this->options['acknowledgement']);
-            }
-
-            $output = $writer->generate()
-                             ->getText();
-        }
-
-        if (isset($cache_file) && ! is_file($cache_file)) {
-            file_put_contents($cache_file, $output);
-            WordPress_Security_Txt::event('cache');
-        }
-
-        return $output;
+        return $data;
     }
 }

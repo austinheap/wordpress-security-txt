@@ -149,7 +149,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'enable',
             apply_filters($this->plugin_name . 'label-enable', esc_html__('Enable', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-general',
             [
@@ -170,7 +170,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'menu',
             apply_filters($this->plugin_name . 'label-menu', esc_html__('Menu', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-general',
             [
@@ -191,7 +191,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'redirect',
             apply_filters($this->plugin_name . 'label-redirect', esc_html__('Redirect', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-general',
             [
@@ -213,7 +213,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'contact',
             apply_filters($this->plugin_name . 'label-contact', esc_html__('Contact', $this->plugin_name)),
-            [ $this->builder, 'text' ],
+            [$this->builder, 'text'],
             $this->plugin_name,
             $this->plugin_name . '-directives',
             [
@@ -236,7 +236,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'encryption',
             apply_filters($this->plugin_name . 'label-encryption', esc_html__('Encryption', $this->plugin_name)),
-            [ $this->builder, 'textarea' ],
+            [$this->builder, 'textarea'],
             $this->plugin_name,
             $this->plugin_name . '-directives',
             [
@@ -259,7 +259,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'disclosure',
             apply_filters($this->plugin_name . 'label-disclosure', esc_html__('Disclosure', $this->plugin_name)),
-            [ $this->builder, 'select' ],
+            [$this->builder, 'select'],
             $this->plugin_name,
             $this->plugin_name . '-directives',
             [
@@ -268,22 +268,14 @@ class WordPress_Security_Txt_Field
                 'class'       => 'widefat hide-when-disabled',
                 'value'       => isset($this->options['disclosure']) ? $this->options['disclosure'] : 'default',
                 'selections'  => [
-                    [
-                        'value' => 'default',
-                        'label' => 'Default — do not include the "Disclosure" directive',
-                    ],
-                    [
-                        'value' => 'full',
-                        'label' => 'Full — you will fully disclose reports after the issue has been resolved',
-                    ],
-                    [
-                        'value' => 'partial',
-                        'label' => 'Partial — you will partially disclose reports after the issue has been resolved',
-                    ],
-                    [
-                        'value' => 'none',
-                        'label' => 'None — you do not want to disclose reports after the issue has been resolved',
-                    ],
+                    ['value' => 'default',
+                     'label' => 'Default — do not include the "Disclosure" directive'],
+                    ['value' => 'full',
+                     'label' => 'Full — you will fully disclose reports after the issue has been resolved'],
+                    ['value' => 'partial',
+                     'label' => 'Partial — you will partially disclose reports after the issue has been resolved'],
+                    ['value' => 'none',
+                     'label' => 'None — you do not want to disclose reports after the issue has been resolved'],
                 ],
             ]
         );
@@ -300,7 +292,7 @@ class WordPress_Security_Txt_Field
             'acknowledgement',
             apply_filters($this->plugin_name . 'label-acknowledgement',
                 esc_html__('Acknowledgement', $this->plugin_name)),
-            [ $this->builder, 'text' ],
+            [$this->builder, 'text'],
             $this->plugin_name,
             $this->plugin_name . '-directives',
             [
@@ -323,7 +315,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'cache',
             apply_filters($this->plugin_name . 'label-cache', esc_html__('Cache', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-library',
             [
@@ -345,7 +337,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'credits',
             apply_filters($this->plugin_name . 'label-credits', esc_html__('Credits', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-library',
             [
@@ -367,7 +359,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'statistics',
             apply_filters($this->plugin_name . 'label-statistics', esc_html__('Statistics', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-library',
             [
@@ -389,7 +381,7 @@ class WordPress_Security_Txt_Field
         add_settings_field(
             'debug',
             apply_filters($this->plugin_name . 'label-debug', esc_html__('Debug', $this->plugin_name)),
-            [ $this->builder, 'checkbox' ],
+            [$this->builder, 'checkbox'],
             $this->plugin_name,
             $this->plugin_name . '-library',
             [
