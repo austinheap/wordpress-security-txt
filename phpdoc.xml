@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpdoc>
+    <title>wordpress-security-txt docs</title>
+    <parser>
+        <default-package-name>\WordPress_Security_Txt</default-package-name>
+        <target>build/docs</target>
+        <encoding>utf8</encoding>
+        <markers>
+            <item>TODO</item>
+        </markers>
+        <visibility>public,protected,private</visibility>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+    </parser>
+    <transformer>
+        <target>docs</target>
+    </transformer>
+    <transformations>
+        <template name="checkstyle"/>
+        <template name="responsive-twig"/>
+    </transformations>
+    <files>
+        <file>index.php</file>
+        <file>uninstall.php</file>
+        <file>wordpress-security-txt.php</file>
+        <directory>admin</directory>
+        <directory>includes</directory>
+        <directory>public</directory>
+        <ignore>tests/*</ignore>
+    </files>
+    <logging>
+        <level>err</level>
+        <paths>
+            <default>build/log/{DATE}.log</default>
+            <errors>build/log/{DATE}.errors.log</errors>
+        </paths>
+    </logging>
+</phpdoc>
