@@ -1,5 +1,7 @@
 # WordPress 4.9+ `security.txt` Plugin
 
+![wordpress-security-txt banner for the WordPress Plugin Directory](assets/banner-1544x500.png?raw=true)
+
 [![Current Release](https://img.shields.io/github/release/austinheap/wordpress-security-txt.svg)](https://github.com/austinheap/wordpress-security-txt/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/austinheap/wordpress-security-txt.svg)](https://packagist.org/packages/austinheap/wordpress-security-txt)
 [![Build Status](https://travis-ci.org/austinheap/wordpress-security-txt.svg?branch=master)](https://travis-ci.org/austinheap/wordpress-security-txt)
