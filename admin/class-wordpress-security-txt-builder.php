@@ -80,7 +80,7 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
@@ -105,7 +105,7 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
@@ -129,7 +129,7 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
@@ -155,11 +155,11 @@ class WordPress_Security_Txt_Builder
         $count    = 1;
         $repeater = [];
 
-        if ( ! empty($this->options[$setatts['id']])) {
+        if (! empty($this->options[$setatts['id']])) {
             $repeater = maybe_unserialize($this->options[$setatts['id']][0]);
         }
 
-        if ( ! empty($repeater)) {
+        if (! empty($repeater)) {
             $count = count($repeater);
         }
 
@@ -186,13 +186,13 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
         if (empty($atts['aria']) && ! empty($atts['description'])) {
             $atts['aria'] = $atts['description'];
-        } else if (empty($atts['aria']) && ! empty($atts['label'])) {
+        } elseif (empty($atts['aria']) && ! empty($atts['label'])) {
             $atts['aria'] = $atts['label'];
         }
 
@@ -218,7 +218,7 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
@@ -245,7 +245,7 @@ class WordPress_Security_Txt_Builder
 
         $atts = wp_parse_args($args, $defaults);
 
-        if ( ! empty($this->options[$atts['id']])) {
+        if (! empty($this->options[$atts['id']])) {
             $atts['value'] = $this->options[$atts['id']];
         }
 
