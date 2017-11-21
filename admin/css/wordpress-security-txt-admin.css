@@ -1,0 +1,110 @@
+.settings_page_wordpress-security-txt-help div.specification {
+  display: inline-flex;
+  background-color: #d3d3d3;
+  padding: 1.5em; }
+.settings_page_wordpress-security-txt-help ul li {
+  list-style: disc;
+  margin-left: 1.5em; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.wrap-radios {
+  max-height: 175px;
+  overflow-y: scroll; }
+
+.settings_page_wordpress-security-txt form[id="wordpress-security-txt[file_input]"] {
+  display: none; }
+.settings_page_wordpress-security-txt div[id="wordpress-security-txt-sections[debug]"] ul {
+  list-style: square;
+  padding-left: 3em; }
+.settings_page_wordpress-security-txt div[id="wordpress-security-txt-sections[debug]"] ul[id="wordpress-security-txt-sections[debug][database]"] strong {
+  font-family: Consolas,Monaco,monospace;
+  unicode-bidi: embed;
+  color: #693; }
+.settings_page_wordpress-security-txt div[id="wordpress-security-txt-sections[debug]"] ul em {
+  color: #369; }
+.settings_page_wordpress-security-txt .error {
+  border-color: #ff1493;
+  background-color: #ffb6c1; }
+.settings_page_wordpress-security-txt .repeater {
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  width: 100%; }
+  .settings_page_wordpress-security-txt .repeater * {
+    box-sizing: border-box; }
+  .settings_page_wordpress-security-txt .repeater .handle,
+  .settings_page_wordpress-security-txt .repeater .repeater-content {
+    border: 1px solid #ddd;
+    padding: 0.75em; }
+  .settings_page_wordpress-security-txt .repeater .repeater-content {
+    border-top: none;
+    display: flow-root; }
+  .settings_page_wordpress-security-txt .repeater .wrap-field {
+    float: left;
+    padding-right: 5em; }
+  .settings_page_wordpress-security-txt .repeater .handle {
+    background-color: #fafafa;
+    cursor: move;
+    overflow: auto;
+    position: relative;
+    width: 100%; }
+  .settings_page_wordpress-security-txt .repeater .btn-edit {
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    cursor: pointer;
+    height: 100%;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px; }
+  .settings_page_wordpress-security-txt .repeater .toggle-arrow {
+    color: #a0a5aa;
+    display: inline-block;
+    font-family: dashicons;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400px;
+    height: 20px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: inherit;
+    transition: 0.4s ease;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    width: 20px; }
+    .settings_page_wordpress-security-txt .repeater .toggle-arrow:before {
+      content: "\f142"; }
+    .settings_page_wordpress-security-txt .repeater .toggle-arrow.closed:before {
+      content: "\f140"; }
+  .settings_page_wordpress-security-txt .repeater .link-remove {
+    color: #a00;
+    text-decoration: none;
+    float: right;
+    position: relative;
+    top: 0.5em; }
+    .settings_page_wordpress-security-txt .repeater .link-remove:hover {
+      color: red;
+      text-decoration: underline; }
+  .settings_page_wordpress-security-txt .repeater #upload-file {
+    display: block;
+    text-align: right; }
+.settings_page_wordpress-security-txt .repeater-more {
+  text-align: right; }
+
+@media screen and (max-width: 782px) {
+  input[type=file],
+  input[type=url] {
+    -webkit-appearance: none;
+    padding: 6px 10px; } }
+
+/*# sourceMappingURL=wordpress-security-txt-admin.css.map */

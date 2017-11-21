@@ -1,0 +1,6 @@
+[submodule "lib"]
+	path = lib
+	url = https://github.com/austinheap/php-security-txt
+[submodule "languages"]
+	path = languages
+	url = https://github.com/austinheap/wordpress-security-txt-translations
