@@ -24,23 +24,21 @@
  * @subpackage WordPress_Security_Txt/includes
  * @author     Austin Heap <me@austinheap.com>
  */
-class WordPress_Security_Txt_i18n {
+class WordPress_Security_Txt_i18n
+{
 
 
-	/**
-	 * Load the plugin text domain for translation.
-	 *
-	 * @since    1.0.0
-	 */
-	public function load_plugin_textdomain() {
-
-		load_plugin_textdomain(
-			'wordpress-security-txt',
-			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
-		);
-
-	}
-
-
+    /**
+     * Load the plugin text domain for translation.
+     *
+     * @since    1.0.0
+     */
+    public function load_plugin_textdomain()
+    {
+        load_plugin_textdomain(
+            'wordpress-security-txt',
+            false,
+            dirname(dirname(plugin_basename(__FILE__))) . '/languages/'
+        );
+    }
 }

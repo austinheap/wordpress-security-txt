@@ -11,13 +11,13 @@
  */
 
 $links = [
-	'repo'          => 'https://github.com/austinheap/wordpress-security-txt',
-	'issues'        => 'https://github.com/austinheap/laravel-security-txt/issues',
-	'pulls'         => 'https://github.com/austinheap/laravel-security-txt/pulls',
-	'readme'        => 'https://github.com/austinheap/laravel-security-txt/blob/master/README.md',
-	'license'       => 'https://github.com/austinheap/laravel-security-txt/blob/master/LICENSE.md',
-	'contributing'  => 'https://github.com/austinheap/laravel-security-txt/blob/master/CONTRIBUTING.md',
-	'specification' => 'https://github.com/austinheap/laravel-security-txt/blob/master/SPECIFICATION.md',
+    'repo'          => 'https://github.com/austinheap/wordpress-security-txt',
+    'issues'        => 'https://github.com/austinheap/laravel-security-txt/issues',
+    'pulls'         => 'https://github.com/austinheap/laravel-security-txt/pulls',
+    'readme'        => 'https://github.com/austinheap/laravel-security-txt/blob/master/README.md',
+    'license'       => 'https://github.com/austinheap/laravel-security-txt/blob/master/LICENSE.md',
+    'contributing'  => 'https://github.com/austinheap/laravel-security-txt/blob/master/CONTRIBUTING.md',
+    'specification' => 'https://github.com/austinheap/laravel-security-txt/blob/master/SPECIFICATION.md',
 ];
 
 ?>
@@ -35,10 +35,10 @@ $links = [
             <a href="<?php echo $links['specification']; ?>">specification</a> as follows:
         </p>
         <div class="specification">
-            <pre><?php echo htmlspecialchars( file_get_contents( plugin_dir_path( __FILE__ ) . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'SPECIFICATION.txt' ) ); ?></pre>
+            <pre><?php echo htmlspecialchars(file_get_contents(plugin_dir_path(__FILE__) . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'SPECIFICATION.txt')); ?></pre>
         </div>
     </div>
 
 <?php
 
-unset( $links );
+unset($links);
