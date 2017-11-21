@@ -282,7 +282,8 @@ class WordPress_Security_Txt_Public
      * @param string $data
      * @return void
      */
-    private function write_security_txt_cache($data) {
+    private function write_security_txt_cache($data)
+    {
         if (isset($this->options['cache']) && $this->options['cache']) {
             file_put_contents(self::cache_file(), $data);
             WordPress_Security_Txt::event('cache');
