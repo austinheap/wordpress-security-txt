@@ -14,7 +14,7 @@
 
 <p id="wordpress-security-txt-sections[directives]" class="hide-when-disabled">
     Here you can define the values for the various <code>security.txt</code> declaratives. More information about each
-    directive can be found within the <a href="?page=wordpress-security-txt-help">specification</a> itself. Please
-    note that while the specification allows more than one <code>Contact</code> directive to be present, this plugin
-    currently only supports a single record (e-mail, URL, or phone number).
+    directive can be found within the <a href="?page=wordpress-security-txt-help#specification">specification</a> itself.
+    Please note that while the specification allows more than one <code>Contact</code> directive to be present, this
+    plugin currently only supports a single record (e-mail, URL, or phone number).
 </p>

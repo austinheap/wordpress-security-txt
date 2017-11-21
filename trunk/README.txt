@@ -89,6 +89,16 @@ If you would like to contribute a new languge or you spotted in error in one of 
 
 The translations repository is included in builds submitted to the WordPress plugin directory. Users with the [GitHub Updater Plugin](https://github.com/afragen/github-updater) don't have to wait for builds to the WordPress plugin directory -- they can get updated translations as soon as they're published to the repository by POEditor.
 
+== Anonymous Statistics (Opt-in) ==
+
+This plugin has an option --- that is **disabled** by default and _can only be enabled by explicilty opt-ing in_ on the `security.txt` Settings page --- to collect anonymous statistics to help better understand how this plugin is used and how people are implementing their `security.txt` documents. The goal of collecting this data is to aid in research and design of the [specification](https://tools.ietf.org/html/draft-foudil-securitytxt-00), the [PHP library](https://github.com/austinheap/php-security-txt), the [plugin](https://github.com/austinheap/wordpress-security-txt) itself, and to help us create a better experience for all users.
+
+For example, one function of anonymous statistics is to send your <code>security.txt</code> document to our servers. This allows us to track what percent of users are implementing the specification according to the draft RFC, and how it might differ from the explicit definitions submitted to the [Internet Engineering Task Force (IETF)](https://www.ietf.org/).
+
+We respect your privacy and are happy to clarify on any aspect of the statistics collection and analysis. More importantly, you can [verify this in the code for yourself on GitHub](https://github.com/austinheap/wordpress-security-txt/tree/master/trunk).
+
+We do not track **any** personally-identifiable information and we are committed to protecting your privacy. With regards to performance, the tracking is implemented in such a way so as to not impact of your WordPress site at all.
+
 == Badges ==
 
 All the badges!

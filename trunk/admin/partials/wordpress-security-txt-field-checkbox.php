@@ -12,11 +12,14 @@
 
 ?><label for="<?php echo esc_attr($atts['id']); ?>">
     <input aria-role="checkbox"
-		<?php checked(1, $atts['value'], true); ?>
+        <?php checked(1, $atts['value'], true); ?>
            class="<?php echo esc_attr($atts['class']); ?>"
            id="<?php echo esc_attr($atts['id']); ?>"
            name="<?php echo esc_attr($atts['name']); ?>"
            type="checkbox"
            value="1"/>
-    <span class="description"><?php esc_html_e($atts['description'], 'wordpress-security-txt'); ?></span>
+    <span class="description"><?php if (!empty($atts['description_raw'])) {
+            print $atts['description_raw']; } else {
+            esc_html_e($atts['description'], 'wordpress-security-txt');
+        } ?></span>
 </label>

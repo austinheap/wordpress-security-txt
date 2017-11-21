@@ -1,7 +1,9 @@
 .settings_page_wordpress-security-txt-help div.specification {
   display: inline-flex;
   background-color: #d3d3d3;
-  padding: 1.5em; }
+  padding: 1.5em;
+  overflow: scroll;
+  height: 25em; }
 .settings_page_wordpress-security-txt-help ul li {
   list-style: disc;
   margin-left: 1.5em; }

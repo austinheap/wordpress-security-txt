@@ -4,6 +4,8 @@
     display: inline-flex;
     background-color: #d3d3d3;
     padding: 1.5em;
+    overflow: scroll;
+    height: 25em;
   }
   ul li {
     list-style: disc;

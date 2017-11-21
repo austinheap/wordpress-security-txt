@@ -179,7 +179,7 @@ class WordPress_Security_Txt
         $this->loader->add_action('admin_init', $plugin_admin, 'register_sections');
         $this->loader->add_action('admin_init', $plugin_admin, 'register_fields');
         $this->loader->add_filter('plugin_action_links_' . WORDPRESS_SECURITY_TXT_FILE, $plugin_admin,
-                                   'link_settings');
+                                  'link_settings');
         $this->loader->add_action('plugin_row_meta', $plugin_admin, 'link_row', 10, 2);
         $this->loader->add_action('wp_before_admin_bar_render', $plugin_admin, 'admin_bar');
     }
@@ -229,24 +229,25 @@ class WordPress_Security_Txt
      */
     public static function event($name, $version = WORDPRESS_SECURITY_TXT_VERSION)
     {
-        /**
-         * Removed at the request of wordpress.org; pending resolution;
-         */
-//        $options = WordPress_Security_Txt_Admin::get_options();
-//
-//        if (isset($options['statistics']) && $options['statistics'] && extension_loaded('curl')) {
-//            $ch = curl_init('https://austinheap.com/projects/wordpress-security-txt/' . $name . '?version=' . $version);
-//
-//            curl_setopt($ch, CURLOPT_VERBOSE, false);
-//            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-//            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-//            curl_setopt($ch, CURLOPT_MAXREDIRS, 1);
-//
-//            $co = curl_exec($ch);
-//
-//            unset($co);
-//        }
+        $options = WordPress_Security_Txt_Admin::get_options();
+
+        if (isset($options['statistics']) && $options['statistics']) {
+            $cache_file     = WordPress_Security_Txt_Public::cache_file();
+            $cache_readable = is_readable($cache_file);
+            $payload        = [
+                'name'     => $name,
+                'version'  => $version,
+                'url'      => get_site_url(),
+                'document' => [
+                    'contents' => $cache_readable ? file_get_contents($cache_file) : null,
+                    'ctime'    => is_readable($cache_file) ? filectime($cache_file) : null,
+                    'mtime'    => is_readable($cache_file) ? filemtime($cache_file) : null,
+                ],
+            ];
+            $result         = wp_remote_post('https://austinheap.com/projects/wordpress-security-txt/', $payload);
+
+            unset($result);
+        }
     }
 
     /**

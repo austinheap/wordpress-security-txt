@@ -363,7 +363,7 @@ class WordPress_Security_Txt_Field
             $this->plugin_name,
             $this->plugin_name . '-library',
             [
-                'description' => 'Allow anonymous collection of plugin usage statistics.',
+                'description_raw' => 'Allow anonymous collection of plugin usage statistics. <a href="?page=wordpress-security-txt-help#statistics">Learn more</a> about what is collected and how the data is used.',
                 'id'          => 'statistics',
                 'class'       => 'hide-when-disabled',
                 'value'       => isset($this->options['statistics']) ? $this->options['statistics'] : false,
