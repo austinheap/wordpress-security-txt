@@ -74,25 +74,25 @@ class WordPress_Security_Txt_Sanitizer
 
         if (in_array($this->type, ['color', 'radio', 'select'], true)) {
             $sanitized = $this->sanitize_random($this->data);
-        } else if (in_array($this->type, ['date', 'datetime', 'datetime-local', 'time', 'week'], true)) {
+        } elseif (in_array($this->type, ['date', 'datetime', 'datetime-local', 'time', 'week'], true)) {
             $sanitized = $this->sanitize_wrapper($this->data, 'strtotime');
-        } else if (in_array($this->type, ['number', 'range'], true)) {
+        } elseif (in_array($this->type, ['number', 'range'], true)) {
             $sanitized = $this->sanitize_wrapper($this->data, 'intval');
-        } else if (in_array($this->type, ['hidden', 'month', 'text'], true)) {
+        } elseif (in_array($this->type, ['hidden', 'month', 'text'], true)) {
             $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_text_field');
-        } else if ($this->type == 'checkbox') {
+        } elseif ($this->type == 'checkbox') {
             $sanitized = (isset($this->data) && ! is_null($this->data) ? true : false);
-        } else if ($this->type == 'editor') {
+        } elseif ($this->type == 'editor') {
             $sanitized = wp_kses_post($this->data);
-        } else if ($this->type == 'email') {
+        } elseif ($this->type == 'email') {
             $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_email');
-        } else if ($this->type == 'file') {
+        } elseif ($this->type == 'file') {
             $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_file_name');
-        } else if ($this->type == 'tel') {
+        } elseif ($this->type == 'tel') {
             $sanitized = $this->sanitize_phone($this->data);
-        } else if ($this->type == 'textarea') {
+        } elseif ($this->type == 'textarea') {
             $sanitized = $this->sanitize_wrapper($this->data, 'esc_textarea');
-        } else if ($this->type == 'url') {
+        } elseif ($this->type == 'url') {
             $sanitized = $this->sanitize_wrapper($this->data, 'esc_url');
         }
 

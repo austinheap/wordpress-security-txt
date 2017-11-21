@@ -82,13 +82,13 @@ class WordPress_Security_Txt_Public
      */
     public function route()
     {
-        if ( ! isset($_SERVER) || ! isset($_SERVER['REQUEST_URI']) || ! isset($_SERVER['HTTP_HOST'])) {
+        if (! isset($_SERVER) || ! isset($_SERVER['REQUEST_URI']) || ! isset($_SERVER['HTTP_HOST'])) {
             return;
         }
 
         $this->options = WordPress_Security_Txt_Admin::get_options($this->plugin_name);
 
-        if ( ! is_array($this->options) || ! isset($this->options['enable']) || ! $this->options['enable']) {
+        if (! is_array($this->options) || ! isset($this->options['enable']) || ! $this->options['enable']) {
             return;
         }
 
@@ -126,7 +126,7 @@ class WordPress_Security_Txt_Public
      */
     private function is_secure()
     {
-        return ( ! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
+        return (! empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
     }
 
     /**
@@ -208,7 +208,7 @@ class WordPress_Security_Txt_Public
     {
         if ($document == 'security.txt') {
             $output = $this->render_security_txt();
-        } else if ($document == 'gpg.txt') {
+        } elseif ($document == 'gpg.txt') {
             $output = $this->render_gpg_txt();
         }
 

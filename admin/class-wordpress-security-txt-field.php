@@ -400,5 +400,4 @@ class WordPress_Security_Txt_Field
             ]
         );
     }
-
 }
