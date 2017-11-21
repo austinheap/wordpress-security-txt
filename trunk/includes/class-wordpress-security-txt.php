@@ -229,21 +229,24 @@ class WordPress_Security_Txt
      */
     public static function event($name, $version = WORDPRESS_SECURITY_TXT_VERSION)
     {
-        $options = WordPress_Security_Txt_Admin::get_options();
-
-        if (isset($options['statistics']) && $options['statistics'] && extension_loaded('curl')) {
-            $ch = curl_init('https://austinheap.com/projects/wordpress-security-txt/' . $name . '?version=' . $version);
-
-            curl_setopt($ch, CURLOPT_VERBOSE, false);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_MAXREDIRS, 1);
-
-            $co = curl_exec($ch);
-
-            unset($co);
-        }
+        /**
+         * Removed at the request of wordpress.org; pending resolution;
+         */
+//        $options = WordPress_Security_Txt_Admin::get_options();
+//
+//        if (isset($options['statistics']) && $options['statistics'] && extension_loaded('curl')) {
+//            $ch = curl_init('https://austinheap.com/projects/wordpress-security-txt/' . $name . '?version=' . $version);
+//
+//            curl_setopt($ch, CURLOPT_VERBOSE, false);
+//            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+//            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+//            curl_setopt($ch, CURLOPT_MAXREDIRS, 1);
+//
+//            $co = curl_exec($ch);
+//
+//            unset($co);
+//        }
     }
 
     /**

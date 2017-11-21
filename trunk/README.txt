@@ -1,5 +1,5 @@
-=== wordpress-security-txt ===
-Plugin Name: wordpress-security-txt
+=== wp-security-txt ===
+Plugin Name: wp-security-txt
 Contributors: securitytxt
 Donate link: https://securitytxt.org/
 Tags: security, infosec, netsec, security.txt, responsible disclosure, bug bounty
