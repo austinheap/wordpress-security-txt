@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Sanitize anything
+ * Simple (by no means complete) input sanitizer.
  *
  * @since      1.0.0
  *
@@ -12,44 +12,59 @@
 
 class WordPress_Security_Txt_Sanitizer
 {
+    /**
+     * Value for default attributes which should be ignored.
+     */
+    const NO_VALUE_SET = -3.14159265359;
+
+    /**
+     * The ID of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string $plugin_name The ID of this plugin.
+     */
+    private $plugin_name;
+
+    /**
+     * The version of this plugin.
+     *
+     * @since    1.0.0
+     * @access   private
+     * @var      string $version The current version of this plugin.
+     */
+    private $version;
 
     /**
      * The data to be sanitized
      *
-     * @access    private
-     * @since     0.1
-     * @var    string
+     * @var    mixed $data
      */
-    private $data = '';
+    private $data;
 
     /**
      * The type of data
      *
-     * @access    private
-     * @since     0.1
-     * @var    string
+     * @var    string $type
      */
-    private $type = '';
+    private $type;
 
     /**
      * Constructor
+     *
+     * @param mixed  $data
+     * @param string $type
      */
-    public function __construct()
+    public function __construct($plugin_name, $version, $data = self::NO_VALUE_SET, $type = self::NO_VALUE_SET)
     {
-        // Nothing to see here...
+        $this->plugin_name = $plugin_name;
+        $this->version     = $version;
+        $this->data        = $data == self::NO_VALUE_SET ? '' : $data;
+        $this->type        = $type == self::NO_VALUE_SET ? '' : $type;
     }
 
     /**
      * Cleans the data
-     *
-     * @access    public
-     * @since     0.1
-     *
-     * @uses      sanitize_email()
-     * @uses      sanitize_phone()
-     * @uses      esc_textarea()
-     * @uses      sanitize_text_field()
-     * @uses      esc_url()
      *
      * @return  mixed         The sanitized data
      */
@@ -57,69 +72,32 @@ class WordPress_Security_Txt_Sanitizer
     {
         $sanitized = '';
 
-        /**
-         * Add additional santization before the default sanitization
-         */
-        //        do_action( 'slushman_pre_sanitize', $sanitized );
-
-        switch ($this->type) {
-
-            case 'color':
-            case 'radio':
-            case 'select':
-                $sanitized = $this->sanitize_random($this->data);
-                break;
-
-            case 'date':
-            case 'datetime':
-            case 'datetime-local':
-            case 'time':
-            case 'week':
-                $sanitized = $this->sanitize_wrapper($this->data, 'strtotime');
-                break;
-
-            case 'number':
-            case 'range':
-                $sanitized = $this->sanitize_wrapper($this->data, 'intval');
-                break;
-
-            case 'hidden':
-            case 'month':
-            case 'text':
-                $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_text_field');
-                break;
-
-            case 'checkbox':
-                $sanitized = (isset($this->data) && ! is_null($this->data) ? true : false);
-                break;
-            case 'editor':
-                $sanitized = wp_kses_post($this->data);
-                break;
-            case 'email':
-                $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_email');
-                break;
-            case 'file':
-                $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_file_name');
-                break;
-            case 'tel':
-                $sanitized = $this->sanitize_phone($this->data);
-                break;
-            case 'textarea':
-                $sanitized = $this->sanitize_wrapper($this->data, 'esc_textarea');
-                break;
-            case 'url':
-                $sanitized = $this->sanitize_wrapper($this->data, 'esc_url');
-                break;
-
-        } // switch
-
-        /**
-         * Add additional santization after the default .
-         */
-        //        do_action( 'slushman_post_sanitize', $sanitized );
+        if (in_array($this->type, ['color', 'radio', 'select'], true)) {
+            $sanitized = $this->sanitize_random($this->data);
+        } else if (in_array($this->type, ['date', 'datetime', 'datetime-local', 'time', 'week'], true)) {
+            $sanitized = $this->sanitize_wrapper($this->data, 'strtotime');
+        } else if (in_array($this->type, ['number', 'range'], true)) {
+            $sanitized = $this->sanitize_wrapper($this->data, 'intval');
+        } else if (in_array($this->type, ['hidden', 'month', 'text'], true)) {
+            $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_text_field');
+        } else if ($this->type == 'checkbox') {
+            $sanitized = (isset($this->data) && ! is_null($this->data) ? true : false);
+        } else if ($this->type == 'editor') {
+            $sanitized = wp_kses_post($this->data);
+        } else if ($this->type == 'email') {
+            $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_email');
+        } else if ($this->type == 'file') {
+            $sanitized = $this->sanitize_wrapper($this->data, 'sanitize_file_name');
+        } else if ($this->type == 'tel') {
+            $sanitized = $this->sanitize_phone($this->data);
+        } else if ($this->type == 'textarea') {
+            $sanitized = $this->sanitize_wrapper($this->data, 'esc_textarea');
+        } else if ($this->type == 'url') {
+            $sanitized = $this->sanitize_wrapper($this->data, 'esc_url');
+        }
 
         return $sanitized;
-    } // clean()
+    }
 
     /**
      * Performs general cleaning functions on data
@@ -149,10 +127,6 @@ class WordPress_Security_Txt_Sanitizer
     /**
      * Validates a phone number
      *
-     * @access    private
-     * @since     0.1
-     * @link      http://jrtashjian.com/2009/03/code-snippet-validate-a-phone-number/
-     *
      * @param    string $phone A phone number string
      *
      * @return    string|bool        $phone|FALSE        Returns the valid phone number, FALSE if not
@@ -165,7 +139,7 @@ class WordPress_Security_Txt_Sanitizer
 
         if (preg_match('/^[+]?([0-9]?)[(|s|-|.]?([0-9]{3})[)|s|-|.]*([0-9]{3})[s|-|.]*([0-9]{4})$/', $phone)) {
             return trim($phone);
-        } // $phone validation
+        }
 
         return false;
     }
@@ -191,11 +165,11 @@ class WordPress_Security_Txt_Sanitizer
 
         if (empty($type)) {
             $check = new WP_Error('forgot_type',
-                                   __('Specify the data type to sanitize.', 'wordpress-security-txt'));
+                __('Specify the data type to sanitize.', $this->plugin_name));
         }
 
         if (is_wp_error($check)) {
-            wp_die($check->get_error_message(), __('Forgot data type.', 'wordpress-security-txt'));
+            wp_die($check->get_error_message(), __('Forgot data type.', $this->plugin_name));
         }
 
         $this->type = $type;
@@ -203,8 +177,6 @@ class WordPress_Security_Txt_Sanitizer
 
     /**
      * Checks a date against a format to ensure its validity
-     *
-     * @link    http://www.php.net/manual/en/function.checkdate.php
      *
      * @param    string $date   The date as collected from the form field
      * @param    string $format The format to check the date against
@@ -215,7 +187,7 @@ class WordPress_Security_Txt_Sanitizer
     {
         $version = explode('.', phpversion());
 
-        if (((int) $version[0] >= 5 && (int) $version[1] >= 2 && (int) $version[2] > 17)) {
+        if (((int)$version[0] >= 5 && (int)$version[1] >= 2 && (int)$version[2] > 17)) {
             $d = DateTime::createFromFormat($format, $date);
         } else {
             $d = new DateTime(date($format, strtotime($date)));

@@ -121,6 +121,11 @@ class WordPress_Security_Txt
         /**
          * The class responsible for rendering all fields that occur in the admin area.
          */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wordpress-security-txt-builder.php';
+
+        /**
+         * The class responsible for registering all fields that occur in the admin area.
+         */
         require_once plugin_dir_path(dirname(__FILE__)) . 'admin/class-wordpress-security-txt-field.php';
 
         /**

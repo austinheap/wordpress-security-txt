@@ -83,7 +83,7 @@
 			cursor: 'move',
 			handle: '.handle',
 			items: '.repeater',
-			opacity: 0.6,
+			opacity: 0.6
 		});
 	});
 
