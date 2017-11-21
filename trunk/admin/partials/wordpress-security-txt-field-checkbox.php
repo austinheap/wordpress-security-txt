@@ -19,7 +19,8 @@
            type="checkbox"
            value="1"/>
     <span class="description"><?php if (!empty($atts['description_raw'])) {
-            print $atts['description_raw']; } else {
-            esc_html_e($atts['description'], 'wordpress-security-txt');
-        } ?></span>
+    print $atts['description_raw'];
+} else {
+    esc_html_e($atts['description'], 'wordpress-security-txt');
+} ?></span>
 </label>
