@@ -127,7 +127,7 @@ class WordPress_Security_Txt_Public
         if (isset($routes[$uri])) {
             if ($routes[$uri]['method'] == 'redirect') {
                 $this->redirect($routes[$uri]['document']);
-            } else if ($routes[$uri]['method'] == 'show') {
+            } elseif ($routes[$uri]['method'] == 'show') {
                 $this->show($routes[$uri]['document']);
             }
         }
