@@ -1,0 +1,28 @@
+{
+    "name": "austinheap/wordpress-security-txt",
+    "description": "A plugin for serving `security.txt` in WordPress 4.9+, based on configuration settings.",
+    "keywords": [
+        "security.txt",
+        "security",
+        "route",
+        "wordpress"
+    ],
+    "homepage": "https://github.com/austinheap/wordpress-security-txt",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Austin Heap",
+            "email": "me@austinheap.com",
+            "homepage": "https://github.com/austinheap",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "require-dev": {
+        "codeclimate/php-test-reporter": "dev-master",
+        "phpunit/phpunit": "~6.0"
+    },
+    "minimum-stability": "stable"
+}

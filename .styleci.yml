@@ -1,0 +1,11 @@
+preset: psr2
+
+risky: false
+
+finder:
+  exclude:
+    - "build"
+    - "docs"
+    - "tests"
+    - "trunk/lib"
+    - "trunk/languages"
