@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    wordpress-security-txt docs &raquo; \WordPress_Security_Txt_Field
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">wordpress-security-txt docs</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                                            </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Initialize the class and set its properties.">
+            <span class="description">Initialize the class and set its properties.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_checkbox" title="checkbox :: Creates a checkbox field">
+            <span class="description">Creates a checkbox field</span><pre>checkbox</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_editor" title="editor :: Creates an editor field">
+            <span class="description">Creates an editor field</span><pre>editor</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_radios" title="radios :: Creates a set of radios field">
+            <span class="description">Creates a set of radios field</span><pre>radios</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_repeater" title="repeater :: ">
+            <span class="description"></span><pre>repeater</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_select" title="select :: Creates a select field">
+            <span class="description">Creates a select field</span><pre>select</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_text" title="text :: Creates a text field">
+            <span class="description">Creates a text field</span><pre>text</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_textarea" title="textarea :: Creates a textarea field">
+            <span class="description">Creates a textarea field</span><pre>textarea</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>WordPress_Security_Txt_Field</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">The admin-specific functionality of the plugin.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>Defines the plugin name, version, and two examples hooks for how to
+enqueue the admin-specific stylesheet and JavaScript.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>WordPress_Security_Txt</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        subpackage
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>WordPress_Security_Txt/admin</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Austin Heap <a href="mailto:me@austinheap.com">me@austinheap.com</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                            </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Initialize the class and set its properties.</h2>
+                            <pre>__construct(string $plugin_name, string $version) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    since
+                                                </th>
+                                                <td>
+                                                                                                                                                                        1.0.0
+                                                                                                                                                                        
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$plugin_name</h4>
+                                                <code>string</code><p><p>The name of this plugin.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$version</h4>
+                                                <code>string</code><p><p>The version of this plugin.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_checkbox"></a>
+                        <div class="element clickable method public  method_checkbox" data-toggle="collapse" data-target=".method_checkbox .collapse">
+                            <h2>Creates a checkbox field</h2>
+                            <pre>checkbox(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_editor"></a>
+                        <div class="element clickable method public  method_editor" data-toggle="collapse" data-target=".method_editor .collapse">
+                            <h2>Creates an editor field</h2>
+                            <pre>editor(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>NOTE: ID must only be lowercase letter, no spaces, dashes, or underscores.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_radios"></a>
+                        <div class="element clickable method public  method_radios" data-toggle="collapse" data-target=".method_radios .collapse">
+                            <h2>Creates a set of radios field</h2>
+                            <pre>radios(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_repeater"></a>
+                        <div class="element clickable method public  method_repeater" data-toggle="collapse" data-target=".method_repeater .collapse">
+                            <h2>repeater</h2>
+                            <pre>repeater( $args) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_select"></a>
+                        <div class="element clickable method public  method_select" data-toggle="collapse" data-target=".method_select .collapse">
+                            <h2>Creates a select field</h2>
+                            <pre>select(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Note: label is blank since its created in the Settings API</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_text"></a>
+                        <div class="element clickable method public  method_text" data-toggle="collapse" data-target=".method_text .collapse">
+                            <h2>Creates a text field</h2>
+                            <pre>text(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_textarea"></a>
+                        <div class="element clickable method public  method_textarea" data-toggle="collapse" data-target=".method_textarea .collapse">
+                            <h2>Creates a textarea field</h2>
+                            <pre>textarea(array $args) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$args</h4>
+                                                <code>array</code><p><p>The arguments for the field</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The HTML field</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_plugin_name"> </a>
+                            <div class="element clickable property  private property_plugin_name" data-toggle="collapse" data-target=".property_plugin_name .collapse">
+                                <h2>The ID of this plugin.</h2>
+                                <pre>plugin_name : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>The ID of this plugin.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_version"> </a>
+                            <div class="element clickable property  private property_version" data-toggle="collapse" data-target=".property_version .collapse">
+                                <h2>The version of this plugin.</h2>
+                                <pre>version : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        since
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        access
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>private</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>The current version of this plugin.</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\WordPress_Security_Txt_Field"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/default.html">\</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/WordPress_Security_Txt_Field.html">WordPress_Security_Txt_Field</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Tue, 21 Nov 2017 00:40:30 +0000.<br/>
+    </footer>
+    </body>
+</html>

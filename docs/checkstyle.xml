@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<checkstyle version="1.3.0">
+  <file name="admin/partials/wordpress-security-txt-field-repeater.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/partials/wordpress-security-txt-field-editor.php"/>
+  <file name="admin/partials/wordpress-security-txt-field-textarea.php"/>
+  <file name="admin/partials/wordpress-security-txt-field-text.php"/>
+  <file name="admin/partials/wordpress-security-txt-field-checkbox.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/class-wordpress-security-txt-sanitizer.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+    <error line="140" severity="error" message="Argument $data is missing from the Docblock of sanitize_wrapper" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="140" severity="error" message="Argument $function is missing from the Docblock of sanitize_wrapper" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="140" severity="error" message="No summary for method sanitize_wrapper()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="includes/class-wordpress-security-txt-deactivator.php"/>
+  <file name="admin/partials/wordpress-security-txt-page-help.php"/>
+  <file name="admin/partials/wordpress-security-txt-section-debug.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/partials/wordpress-security-txt-page-settings.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="public/partials/wordpress-security-txt-public-display.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/partials/wordpress-security-txt-field-select.php"/>
+  <file name="wordpress-security-txt.php"/>
+  <file name="includes/class-wordpress-security-txt-i18n.php"/>
+  <file name="includes/class-wordpress-security-txt.php">
+    <error line="225" severity="error" message="Argument $name is missing from the Docblock of event" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="225" severity="error" message="Argument $version is missing from the Docblock of event" source="phpDocumentor.file.PPC:ERR-50015"/>
+  </file>
+  <file name="uninstall.php"/>
+  <file name="public/class-wordpress-security-txt-public.php">
+    <error line="178" severity="error" message="Argument $reset is missing from the Docblock of cache_cleared" source="phpDocumentor.file.PPC:ERR-50015"/>
+  </file>
+  <file name="includes/index.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/index.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/partials/wordpress-security-txt-section-general.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="index.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="includes/class-wordpress-security-txt-loader.php"/>
+  <file name="admin/partials/wordpress-security-txt-section-library.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="includes/class-wordpress-security-txt-activator.php"/>
+  <file name="admin/partials/wordpress-security-txt-section-directives.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+  <file name="admin/class-wordpress-security-txt-admin.php">
+    <error line="78" severity="error" message="Argument $plugin_name is missing from the Docblock of get_options" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="485" severity="error" message="Argument $input is missing from the Docblock of validate_options" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="485" severity="error" message="No summary for method validate_options()" source="phpDocumentor.file.PPC:ERR-50008"/>
+    <error line="570" severity="error" message="Argument $type is missing from the Docblock of sanitizer" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="570" severity="error" message="Argument $data is missing from the Docblock of sanitizer" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="570" severity="error" message="No summary for method sanitizer()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="admin/class-wordpress-security-txt-field.php">
+    <error line="145" severity="error" message="Argument $args is missing from the Docblock of repeater" source="phpDocumentor.file.PPC:ERR-50015"/>
+    <error line="145" severity="error" message="No summary for method repeater()" source="phpDocumentor.file.PPC:ERR-50008"/>
+  </file>
+  <file name="public/index.php">
+    <error line="0" severity="error" message="No summary was found for this file" source="phpDocumentor.file.PPC:ERR-50000"/>
+  </file>
+</checkstyle>
