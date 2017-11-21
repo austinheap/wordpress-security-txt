@@ -295,7 +295,7 @@ class WordPress_Security_Txt_Admin
 
                 for ($i = 0; $i < $count; $i++) {
                     foreach ($clean as $field_name => $field) {
-                        if ( ! isset($valid[$option[0]][$i])) {
+                        if (! isset($valid[$option[0]][$i])) {
                             continue;
                         }
 

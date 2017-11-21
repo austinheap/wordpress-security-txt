@@ -24,10 +24,9 @@
             $setatts['class'] .= ' hidden';
         }
 
-        if ( ! empty($repeater[$i][$setatts['title-field']])) {
+        if (! empty($repeater[$i][$setatts['title-field']])) {
             $setatts['label-header'] = $repeater[$i][$setatts['title-field']];
-        }
-        ?>
+        } ?>
         <li class="<?php echo esc_attr($setatts['class']); ?>">
             <div class="handle">
                 <span class="title-repeater"><?php echo esc_html($setatts['label-header']); ?></span>
@@ -42,28 +41,25 @@
 
                     foreach ($setatts['fields'] as $fieldcount => $field) {
                         foreach ($field as $type => $atts) {
-                            if ( ! empty($repeater) && ! empty($repeater[$i][$atts['id']])) {
+                            if (! empty($repeater) && ! empty($repeater[$i][$atts['id']])) {
                                 $atts['value'] = $repeater[$i][$atts['id']];
                             }
 
                             $atts['id']   .= '[]';
                             $atts['name'] .= '[]'; ?><p class="wrap-field"><?php
 
-                            require plugin_dir_path(__FILE__) . $this->plugin_name . '-field-' . $type . '.php';
-                            ?>
+                            require plugin_dir_path(__FILE__) . $this->plugin_name . '-field-' . $type . '.php'; ?>
                             </p>
                             <?php
                         }
-                    }
-                    ?>
+                    } ?>
                 </div>
                 <div>
                     <a class="link-remove" href="#">
 						<span>
                             <?php
                             echo esc_html(apply_filters($this->plugin_name . '-repeater-remove-link-label',
-                                $setatts['label-remove']));
-                            ?>
+                                $setatts['label-remove'])); ?>
                         </span>
                     </a>
                 </div>

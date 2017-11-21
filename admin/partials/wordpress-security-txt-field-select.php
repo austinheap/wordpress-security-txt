@@ -10,7 +10,7 @@
  * @subpackage WordPress_Security_Txt/admin/partials
  */
 
-if ( ! empty($atts['label'])) {
+if (! empty($atts['label'])) {
     ?>
     <label for="<?php echo esc_attr($atts['id']); ?>">
         <?php esc_html_e($atts['label'], 'employees'); ?>:
@@ -26,7 +26,7 @@ if ( ! empty($atts['label'])) {
         name="<?php echo esc_attr($atts['name']); ?>">
     <?php
 
-    if ( ! empty($atts['blank'])) {
+    if (! empty($atts['blank'])) {
         ?>
         <option value><?php esc_html_e($atts['blank'], $this->plugin_name); ?></option>
         <?php
