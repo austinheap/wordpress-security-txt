@@ -279,6 +279,11 @@ class WordPress_Security_Txt
      */
     public static function import_lib()
     {
+        require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Directives/Acknowledgement.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Directives/Contact.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Directives/Disclosure.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Directives/Encryption.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/SecurityTxtInterface.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/SecurityTxt.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Writer.php';
         require_once plugin_dir_path(dirname(__FILE__)) . 'lib/src/Reader.php';

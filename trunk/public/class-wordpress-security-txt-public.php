@@ -276,7 +276,7 @@ class WordPress_Security_Txt_Public
                 $writer->setAcknowledgement($this->options['acknowledgement']);
             }
 
-            $output = $writer->generate()->getText();
+            $output = $writer->execute()->getText();
         }
 
         $this->write_security_txt_cache($output);

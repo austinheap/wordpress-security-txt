@@ -13,7 +13,12 @@
 ?>
 
 <p id="wordpress-security-txt-sections[library]" class="hide-when-disabled">
-    This plugin uses the library <code><a href="https://github.com/austinheap/php-security-txt">php-security-txt
-    v<?php echo \AustinHeap\Security\Txt\SecurityTxt::VERSION; ?></a></code> to maniplate and render your
-    <code>security.txt</code> document. If you'd like to tweak its behaviour, you may do so here.
+    This plugin uses the library
+    <code>
+        <a href="https://github.com/austinheap/php-security-txt">php-security-txt</a>
+        <a href="https://github.com/austinheap/php-security-txt/tree/v<?php echo \AustinHeap\Security\Txt\SecurityTxt::VERSION; ?>">
+            v<?php echo \AustinHeap\Security\Txt\SecurityTxt::VERSION; ?>
+        </a>
+    </code> to maniplate and render your <code>security.txt</code> document. If you'd like to tweak its behaviour,
+    you may do so here.
 </p>
