@@ -1,0 +1,4 @@
+# If you would like to report a security issue
+# you may report it to us via encrypted e-mail.
+Contact: me@austinheap.com
+Encryption: https://austinheap.com/.well-known/gpg.txt
