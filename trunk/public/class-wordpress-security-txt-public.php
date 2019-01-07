@@ -231,7 +231,7 @@ class WordPress_Security_Txt_Public
             return;
         }
 
-        header('Content-Length: ' . sizeof($output));
+        header('Content-Length: ' . strlen($output));
         header('Content-Type: text/plain');
 
         print $output;
