@@ -32,7 +32,7 @@ if (! defined('WORDPRESS_SECURITY_TXT_FILE')) {
     define('WORDPRESS_SECURITY_TXT_FILE', plugin_basename(__FILE__));
 }
 
-define('WORDPRESS_SECURITY_TXT_VERSION', '1.0.0');
+define('WORDPRESS_SECURITY_TXT_VERSION', '1.0.1');
 
 /**
  * The code that runs during plugin activation.

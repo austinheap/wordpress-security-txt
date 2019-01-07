@@ -72,7 +72,7 @@ class WordPress_Security_Txt
         if (defined('WORDPRESS_SECURITY_TXT_VERSION')) {
             $this->version = WORDPRESS_SECURITY_TXT_VERSION;
         } else {
-            $this->version = '1.0.0';
+            $this->version = '1.0.1';
         }
         $this->plugin_name = 'wordpress-security-txt';
 

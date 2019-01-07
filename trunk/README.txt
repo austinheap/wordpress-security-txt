@@ -55,6 +55,9 @@ While the specification explicitly allows for more than one `Contact` directive,
 
 == Changelog ==
 
+= 1.0.1 =
+* Fix for PHP 7.2+.
+
 = 1.0.0 =
 * Initial release.
 
